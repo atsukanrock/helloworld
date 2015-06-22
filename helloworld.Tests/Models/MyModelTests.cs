@@ -21,5 +21,12 @@ namespace helloworld.Models
 			var that = new MyModel();
 			Assert.Throws<ArgumentNullException>(() => that.Greet(null));
 		}
+
+		[Test]
+		public void GreetShouldThrowArgumentExceptionIfNameIsEmpty()
+		{
+			var that = new MyModel();
+			Assert.Throws<ArgumentException>(() => that.Greet(string.Empty));
+		}
 	}
 }
